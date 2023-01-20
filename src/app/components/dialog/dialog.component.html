@@ -1,0 +1,13 @@
+<mat-card>
+    <mat-card-content>
+        <div class="mat-dialog-content">
+            <input type="text" placeholder="¿Cuál es tu nombre?" [(ngModel)]="new_nombre">
+            <p>{{new_nombre}}</p>
+        </div>
+        <div class="mat-dialog-actions">
+            <button mat-button (click)="enviar()">Abrir Dialog</button>
+            <!-- <button mat-button [matDialogClose]="true"></button>  -->
+        </div>
+    </mat-card-content>
+  </mat-card>
+ 
