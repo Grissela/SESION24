@@ -9,11 +9,13 @@ import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
-import { MatFormFieldModule} from '@angular/material/form-field'; 
+import { MatFormFieldModule} from '@angular/material/form-field';
+import { HomeComponent } from './home/home.component'; 
 @NgModule({
   declarations: [
     DialogComponent,
-    AbrirdialogComponent
+    AbrirdialogComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +30,8 @@ import { MatFormFieldModule} from '@angular/material/form-field';
   ],
   exports: [
     DialogComponent,
-    AbrirdialogComponent
+    AbrirdialogComponent,
+    HomeComponent
   ],
 })
 export class ComponentsModule { }
