@@ -1,5 +1,7 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit ,Inject} from '@angular/core';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { DialogData } from './../dialog/dialog.component';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-abrirdialog',
@@ -8,32 +10,17 @@ import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 })
 export class AbrirdialogComponent implements OnInit{
   
-  new_play!:string;
-  new_name!:string;
-  constructor(public dialog: MatDialog){
-    
-  }
-  ;
-
-  enviar(){
-    const AbrirDialog={
-      position:{right:'10px'},
-      panelClass:['rotate-scale-up']
-
-    };
-   
-    this.dialog.open(AbrirdialogComponent, AbrirDialog);
-    
-  }
+  constructor(public dialogRef: MatDialogRef<AbrirdialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
   ngOnInit(): void {
-    this.new_name=String(localStorage.getItem('nombre'));
+  }
+  Cerrar(): void {
+    this.dialogRef.close();
   }
 
-  // dialogRef.afterClosed().subscribe(result => {
-  //   console.log('The dialog was closed');
-  //   this.new_play = result;
-  // });
+ 
+
 
 
 

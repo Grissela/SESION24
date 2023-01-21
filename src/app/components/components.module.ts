@@ -5,10 +5,11 @@ import { MatButtonModule} from '@angular/material/button'
 import {MatCardModule} from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AbrirdialogComponent } from './abrirdialog/abrirdialog.component';
-import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
-
-
+import { MaterialModule } from '../material/material.module';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatInputModule} from '@angular/material/input';
+import { MatFormFieldModule} from '@angular/material/form-field'; 
 @NgModule({
   declarations: [
     DialogComponent,
@@ -19,9 +20,11 @@ import { FormsModule } from '@angular/forms';
     MatDialogModule,
     MatButtonModule,
     MatCardModule,
-    MatDialogModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    MaterialModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   exports: [
     DialogComponent,

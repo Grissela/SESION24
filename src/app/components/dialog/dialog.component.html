@@ -1,13 +1,24 @@
-<mat-card>
-    <mat-card-content>
-        <div class="mat-dialog-content">
-            <input type="text" placeholder="¿Cuál es tu nombre?" [(ngModel)]="new_nombre">
-            <p>{{new_nombre}}</p>
-        </div>
+<mat-card class="example-card mx-auto mt-5 shadow-lg shadow-gray-400">
+    <mat-card-content class="example-card mx-auto mt-5">
+        <mat-card-header>
+            <div class="flex">
+              <div mat-card-avatar class="example-header-image ml-5">
+              </div>
+              <div class="ml-3 mt-1"><mat-card-title>Angular Material</mat-card-title></div>
+            </div>
+          </mat-card-header>
+          <mat-form-field class="w-full py-5 px-5">
+              <mat-label>¿Cuál es tu nombre?</mat-label>
+              <input matInput [(ngModel)]="new_name">
+          </mat-form-field>
+        
         <div class="mat-dialog-actions">
-            <button mat-button (click)="enviar()">Abrir Dialog</button>
-            <!-- <button mat-button [matDialogClose]="true"></button>  -->
+            <button mat-raised-button  (click)="AbrirDialog()">Abrir Dialog</button>
         </div>
+        <p *ngIf="juego" class="text-center pt-5 pb-5">
+          Tu deporte favorito es: <i>{{juego}}</i>
+        </p>
     </mat-card-content>
   </mat-card>
- 
+  
+  

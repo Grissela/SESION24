@@ -1,17 +1,18 @@
-<mat-card>
-    <mat-card-content>
-        <div class="mat-dialog-content">
-            <h1>{{new_name}}</h1>
-            <h1>¿Cual es tu deporte favorito?</h1>
-            <!-- <input type="text" placeholder="" [(ngMoldel)]="juego"> -->
-        </div>
-        <div class="mat-dialog-actions">
-            <button mat-button (click)="enviar()">Abrir Dialog</button>
-            <!-- <button mat-button [matDialogClose]="true"></button>  -->
-        </div>
-        <!-- <li *ngIf="juego">
-            Tu juego favorito es: <i>{{juego}}</i>
-          </li> -->
-        
-    </mat-card-content>
-  </mat-card>
+<h1 mat-dialog-title>Hi {{ data.new_name }}</h1>
+<div mat-dialog-content>
+  <p>¿Cual es tu deporte favorito?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Deporte favorito</mat-label>
+    <input matInput [(ngModel)]="data.juego" />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions class="flex justify-center">
+  <div class="ml-8">
+    <button mat-button [mat-dialog-close]="data.juego" cdkFocusInitial>
+      Ok
+    </button>
+  </div>
+  <div class="ml-10">
+    <button mat-button (click)="Cerrar()">Cancelar</button>
+  </div>
+</div>
